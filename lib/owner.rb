@@ -54,12 +54,8 @@ class Owner
   end
 
   def sell_pets
-    @pets.values.each do |pet_array| # array of names
-      pet_array.each do |pet|
-        pet.mood = "nervous"
-      end 
-    end
-    @pets = {} # empties the hash because all pets are sold
+    @pets.values.each {|pet_array| pet_array.each {|pet| pet.mood = "nervous" }}
+    @pets.clear # empties the hash because all pets are sold
   end
 
   def list_pets
